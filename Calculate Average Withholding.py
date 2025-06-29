@@ -1,0 +1,22 @@
+def calculate_tax_withholding(weekly_income):
+    if weekly_income < 500:
+        tax_rate = 0.10
+    elif 500 <= weekly_income < 1500:
+        tax_rate = 0.15
+    elif 1500 <= weekly_income < 2500:
+        tax_rate = 0.20
+    else:
+        tax_rate = 0.30
+    
+    tax_withholding = weekly_income * tax_rate
+    return tax_withholding
+
+# Main function
+if __name__ == "__main__":
+    try:
+        income = float(input("Enter your weekly income: $"))
+        withholding = calculate_tax_withholding(income)
+        print(f"Your average tax withholding is: ${withholding:.2f}")
+    except ValueError:
+        print("Please enter a valid number.")
+
